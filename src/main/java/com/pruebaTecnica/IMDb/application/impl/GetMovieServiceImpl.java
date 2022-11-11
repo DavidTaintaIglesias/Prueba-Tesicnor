@@ -16,6 +16,12 @@ public class GetMovieServiceImpl  implements GetMovieService {
     @Override
     public Movie getMovieById(Integer id) throws NotFoundException {
 
-        return repo.findById(id).orElseThrow(()-> new NotFoundException("Not found movie with id " + id));
+        return repo.findById(id).orElseThrow(()-> new NotFoundException("Not found movie whit id "+ id));
+    }
+
+    @Override
+    public Movie getMovieByName(String name) throws NotFoundException{
+
+        return repo.findByName(name).orElseThrow(()-> new NotFoundException("Not found movie whit name "+ name));
     }
 }

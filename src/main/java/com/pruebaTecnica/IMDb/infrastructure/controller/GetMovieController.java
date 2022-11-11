@@ -17,9 +17,15 @@ public class GetMovieController {
 
     private final GetMovieService getMovieService;
 
-    @GetMapping("{id}")
+    @GetMapping("movieId/{id}")
     public ResponseEntity<MovieOutputDto> getMovieById (@PathVariable Integer id) throws NotFoundException {
 
         return ResponseEntity.ok(new MovieOutputDto(getMovieService.getMovieById(id)));
+    }
+
+    @GetMapping("movieName/{name}")
+    public ResponseEntity<MovieOutputDto> getMovieByName (@PathVariable String name) throws NotFoundException {
+
+        return ResponseEntity.ok(new MovieOutputDto(getMovieService.getMovieByName(name)));
     }
 }
