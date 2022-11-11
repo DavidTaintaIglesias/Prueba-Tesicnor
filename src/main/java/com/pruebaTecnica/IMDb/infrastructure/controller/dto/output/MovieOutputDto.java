@@ -14,8 +14,8 @@ public class MovieOutputDto {
 
     private Integer id;
     private String name;
-    private Integer year;
-    private Float valoration;
+    private String year;
+    private Double valoration;
 
     /*
      Otra opción sería implementar mapstruct en el proyecto

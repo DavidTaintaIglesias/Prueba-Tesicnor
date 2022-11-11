@@ -5,10 +5,7 @@ import com.pruebaTecnica.IMDb.infrastructure.controller.dto.output.MovieOutputDt
 import com.pruebaTecnica.shared.exceptions.NotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
@@ -23,8 +20,8 @@ public class GetMovieController {
         return ResponseEntity.ok(new MovieOutputDto(getMovieService.getMovieById(id)));
     }
 
-    @GetMapping("movieName/{name}")
-    public ResponseEntity<MovieOutputDto> getMovieByName (@PathVariable String name) throws NotFoundException {
+    @GetMapping("movieName")
+    public ResponseEntity<MovieOutputDto> getMovieByName (@RequestParam String name) throws NotFoundException {
 
         return ResponseEntity.ok(new MovieOutputDto(getMovieService.getMovieByName(name)));
     }

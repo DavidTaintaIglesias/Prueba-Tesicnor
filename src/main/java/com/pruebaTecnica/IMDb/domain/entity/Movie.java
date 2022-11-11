@@ -23,9 +23,9 @@ public class Movie {
     private String name;
 
     @Column(name = "year")
-    private Integer year;
+    private String year;
 
     @Column(name = "valoration")
-    private Float valoration;
+    private Double valoration;
 
 }
