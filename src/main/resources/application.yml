@@ -1,0 +1,24 @@
+spring:
+
+  application:
+    name: pruebaTesicnor
+
+  output:
+    ansi:
+      enabled: always
+
+  profiles:
+    active: dev
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/IMDb
+    username: user
+    password: password
+
+  driver:
+    class: name:com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
